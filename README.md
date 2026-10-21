@@ -12,6 +12,14 @@ mvn spring-boot:run
 API runs at `http://localhost:8080`. H2 console: `http://localhost:8080/h2-console`
 (JDBC URL: `jdbc:h2:file:./data/librarydb`, user `sa`, blank password).
 
+## Run with Docker
+Build and start the backend from this folder:
+```bash
+docker build -t library-management-backend .
+docker run --name library-management-backend -p 8080:8080 -v library-management-data:/app/data library-management-backend
+```
+The named Docker volume keeps the H2 database between container restarts. The API is available at `http://localhost:8080`.
+
 ## REST API
 - `GET /api/books` — list all books
 - `GET /api/books/{id}` — get one book

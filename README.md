@@ -11,6 +11,8 @@ mvn spring-boot:run
 ```
 API runs at `http://localhost:8080`. H2 console: `http://localhost:8080/h2-console`
 (JDBC URL: `jdbc:h2:file:./data/librarydb`, user `sa`, blank password).
+The server uses the hosting platform's `PORT` environment variable when present (default `8080`).
+Set `CORS_ALLOWED_ORIGIN` to the frontend's exact deployed origin; it defaults to `http://localhost:5173`.
 
 ## Run with Docker
 Build and start the backend from this folder:
